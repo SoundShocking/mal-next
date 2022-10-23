@@ -5,16 +5,15 @@ import {
 } from '@/shared/types/anime.types'
 import { ApiResponseWithPagination } from '@/shared/types/api.types'
 import { ICharacter } from '@/shared/types/character.types'
+import {
+	IManga,
+	MangaFilterEnum,
+	MangaTypeEnum,
+} from '@/shared/types/manga.types'
 
 import { getTopUrl } from '@/configs/api.config'
 
 import { axiosInstance } from '../../api/axios'
-
-type GetTopAnimeParams = {
-	page?: number
-	limit?: number
-	filter?: AnimeFilterEnum
-}
 
 export const TopService = {
 	async getTopAnime(
@@ -36,6 +35,27 @@ export const TopService = {
 		)
 	},
 
+	async getTopManga(
+		page: number = 1,
+		limit: number = 10,
+		filter: MangaFilterEnum = MangaFilterEnum.ByPopularity,
+		type?: MangaTypeEnum
+	) {
+		return axiosInstance.get<ApiResponseWithPagination<IManga>>(
+			getTopUrl(`/manga`),
+			{
+				params: {
+					page,
+					limit,
+					filter,
+					type,
+				},
+			}
+		)
+	},
+
+	async getTopPeople() {},
+
 	async getTopCharacters(page: number = 1, limit: number = 10) {
 		return axiosInstance.get<ApiResponseWithPagination<ICharacter[]>>(
 			getTopUrl(`/characters`),
@@ -47,4 +67,6 @@ export const TopService = {
 			}
 		)
 	},
+
+	async getTopReviews() {},
 }

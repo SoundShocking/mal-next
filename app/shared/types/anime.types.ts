@@ -1,4 +1,4 @@
-interface IAnimeImages {
+export interface IAnimeImages {
 	jpg: {
 		image_url: string
 		small_image_url: string
@@ -46,7 +46,7 @@ export enum AnimeTypeEnum {
 	Music = 'music',
 }
 
-interface IDateRange {
+export interface IDateRange {
 	from: string | null
 	to: string | null
 	prop: {
@@ -82,7 +82,7 @@ interface IBroadcast {
 	string: string | null
 }
 
-interface IMalUrl {
+export interface IMalUrl {
 	mal_id: number
 	type: string
 	name: string

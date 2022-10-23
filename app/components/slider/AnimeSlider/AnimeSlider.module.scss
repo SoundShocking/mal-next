@@ -1,0 +1,39 @@
+.title {
+	@apply text-2xl;
+}
+
+.slider {
+	@apply mt-6;
+
+	--swiper-navigation-color: #fff;
+
+	:global(.swiper-button-prev),
+	:global(.swiper-button-next) {
+	}
+}
+
+.slide {
+	.image {
+		@apply relative bg-white block;
+		aspect-ratio: 225/350;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: none;
+
+			&:global(.swiper-lazy-loaded) {
+				display: block;
+			}
+		}
+	}
+
+	.place {
+		@apply absolute w-8 h-8 rounded-[100%] bg-white bottom-2 left-2 flex justify-center items-center font-bold shadow-sm shadow-black;
+	}
+
+	.name {
+		@apply mt-2 block underline underline-offset-4 hover:text-blue-500 transition-colors duration-300;
+	}
+}
