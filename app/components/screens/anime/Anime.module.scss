@@ -1,0 +1,30 @@
+.anime {
+	.header {
+		@apply py-2 px-4 bg-gray-200;
+	}
+
+	.title {
+		@apply text-2xl;
+	}
+
+	.gridContent {
+		@apply grid gap-8 mt-4;
+		grid-template-columns: 225px auto;
+	}
+
+	.poster {
+	}
+
+	.left {
+	}
+
+	.right {
+	}
+
+	.synopsis {
+		@apply mt-4;
+	}
+
+	.characters {
+	}
+}

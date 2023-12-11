@@ -1,0 +1,67 @@
+.character {
+	@apply p-2 grid grid-cols-[44px_200px_1fr] gap-2;
+
+	&:nth-child(even) {
+		@apply bg-gray-100;
+	}
+
+	.image {
+		@apply w-[44px] h-[64px] flex;
+
+		a {
+			@apply flex w-full h-full;
+		}
+
+		img {
+			@apply w-full h-full object-cover border border-gray-100;
+		}
+	}
+
+	.information {
+		.name {
+			@apply text-xs;
+
+			a {
+				@apply text-blue-500 hover:underline;
+			}
+		}
+
+		.role {
+			@apply text-xs mt-2;
+		}
+
+		.favorites {
+			@apply text-xs text-gray-500 mt-2;
+		}
+	}
+
+	.voiceActors {
+		> div {
+			@apply grid grid-cols-[1fr_44px] gap-2 justify-items-end pb-0.5;
+		}
+
+		.information {
+			@apply text-right;
+
+			.name {
+				@apply text-xs;
+
+				a {
+					@apply text-blue-500 hover:underline;
+				}
+			}
+
+			.language {
+				@apply text-xs text-gray-500 mt-2;
+			}
+		}
+
+		.photo {
+			@apply w-[44px] h-[64px] flex;
+
+			img {
+				@apply block w-full h-full object-cover border border-gray-100;
+			}
+		}
+	}
+}

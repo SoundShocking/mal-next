@@ -14,7 +14,7 @@ interface Props {
 
 export const MangaSlider: FC<Props> = ({ title, items }) => {
 	return (
-		<div className="container mt-8">
+		<div className="container mx-auto mt-8">
 			<h2 className={styles.title}>{title}</h2>
 			<Swiper
 				slidesPerView={6}

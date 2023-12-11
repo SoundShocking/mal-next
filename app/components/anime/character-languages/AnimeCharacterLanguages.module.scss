@@ -1,0 +1,40 @@
+.languages {
+	@apply relative mr-2;
+
+	.header {
+		@apply flex items-center cursor-pointer;
+
+		&.open {
+			svg {
+				@apply rotate-180;
+			}
+		}
+
+		svg {
+			@apply ml-1 transition-transform duration-300;
+		}
+	}
+
+	.dropdown {
+		@apply p-2 absolute right-0 top-[calc(100%_+_5px)] bg-white border border-gray-100 shadow;
+
+		.close {
+			@apply absolute top-2 right-2;
+		}
+
+		.list {
+			@apply mt-4;
+		}
+
+		.item {
+		}
+
+		.label {
+			@apply select-none whitespace-nowrap cursor-pointer;
+
+			input {
+				@apply mr-1;
+			}
+		}
+	}
+}

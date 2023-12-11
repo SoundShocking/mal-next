@@ -1,3 +1,5 @@
+import { IPeopleImages } from '@/shared/types/people.types'
+
 export interface IAnimeImages {
 	jpg: {
 		image_url: string
@@ -139,4 +141,14 @@ export interface IAnimeFull extends IAnime {
 	}
 	external: { name: string; url: string }[]
 	streaming: { name: string; url: string }[]
+}
+
+export interface IAnimeStaff {
+	person: {
+		mal_id: number
+		url: string
+		images: IPeopleImages
+		name: string
+	}
+	positions: string[]
 }

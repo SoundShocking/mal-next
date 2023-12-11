@@ -1,5 +1,6 @@
 import { IAnimeImages } from '@/shared/types/anime.types'
 import { IMangaImages } from '@/shared/types/manga.types'
+import { IPeopleImages } from '@/shared/types/people.types'
 
 interface ICharacterImages {
 	jpg: {
@@ -9,12 +10,6 @@ interface ICharacterImages {
 	webp: {
 		image_url: string
 		small_image_url: string
-	}
-}
-
-interface IPeopleImages {
-	jpg: {
-		image_url: string | null
 	}
 }
 
@@ -63,4 +58,24 @@ export interface ICharacterFull extends ICharacter {
 		language: string
 		person: IPersonMeta
 	}
+}
+
+export interface IAnimeCharacter {
+	character: {
+		mal_id: number
+		url: string
+		images: ICharacterImages
+		name: string
+	}
+	role: string
+	favorites: number
+	voice_actors: {
+		person: {
+			mal_id: number
+			url: string
+			images: IPeopleImages
+			name: string
+		}
+		language: string
+	}[]
 }
